@@ -14,11 +14,11 @@ global $connection;
 	<?php require "common_meta.php"?>
     <script>
         function calcSwitchingCapacity() {
-            var portSpeed = document.getElementById('port_speed').value;
+            let portSpeed = document.getElementById('port_speed').value;
             if (portSpeed === "") return;
-            var ports = 0;
-            var rj45 = 1 * document.getElementById('rj45_ports').value;
-            var sfp = 1 * document.getElementById('sfp_ports').value;
+            let ports = 0;
+            let rj45 = 1 * document.getElementById('rj45_ports').value;
+            let sfp = 1 * document.getElementById('sfp_ports').value;
             if (rj45 != 0) ports += rj45;
             if (sfp != 0) ports += sfp;
             if (ports !== 0) document.getElementById('switching_capacity').value = ports * 2 * portSpeed;
@@ -115,7 +115,7 @@ global $connection;
         <tbody class="font-semibold">
             <?php
             $query = "SELECT s.*, m.name as manufacturer FROM switches s JOIN manufacturers m on m.id = s.manufacturer_id WHERE '' = ''";
-            if ($_GET['action'] == "Search") {
+            if (isset($_GET['action']) && $_GET['action'] == "Search") {
                 if (isset($_GET['manufacturer'])) {
                     $manufacturers = $_GET['manufacturer'];
                     $query .= " AND (s.manufacturer_id = $manufacturers[0]";
