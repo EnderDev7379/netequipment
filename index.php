@@ -1,4 +1,13 @@
-<?php require_once "action_handler.php"?>
+<?php
+require_once "action_handler.php";
+require_once "utils.php";
+$subdomains = explode('.', $_SERVER["HTTP_HOST"]);
+array_pop($subdomains);
+array_pop($subdomains);
+if ($subdomains[0] != "netequipment") {
+    redirect("/404notfound");
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>

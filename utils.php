@@ -1,5 +1,5 @@
 <?php
-function safeReload($success) {
+function safeReload($success): void {
 	if ($success != null)
     	header("Location: {$_SERVER['PHP_SELF']}?success=$success");
 	else
@@ -7,12 +7,12 @@ function safeReload($success) {
     exit();
 }
 
-function redirect($path) {
+function redirect($path): void {
     header("Location: $path");
     exit();
 }
 
-function operatorSelector($name) {
+function operatorSelector($name): void {
 	echo "
 	<select name='$name' class='appearance-none border rounded-md text-center p-0.5 hover:bg-black/10'>
 		<option>=</option>
