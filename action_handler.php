@@ -1,8 +1,8 @@
 <?php
+session_start();
 require_once 'db_init.php';
 require_once 'utils.php';
 global $connection;
-session_start();
 
 if (isset($_POST['action'])) {
 	switch ($_POST['action']) {

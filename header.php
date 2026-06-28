@@ -1,4 +1,3 @@
-<?php require_once 'action_handler.php'?>
 <header>
     <nav>
         <div class="flex justify-between bg-gray-700 p-2 text-gray-300 font-semibold items-center">
